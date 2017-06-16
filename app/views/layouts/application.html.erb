@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%=link_to 'All Events', events_path%>
     <%if logged_in?%>
       <p>Profile: <%=current_user.name%></p>
       <%=link_to 'logout', session_path(current_user), method: :delete%>

@@ -1,3 +1,11 @@
 Welcome, <%=@user.name%> ! <br>
 
-Profile page still under construction...
+  <%if @user.events.any?%>
+  	<h5>Events created (<%=@user.events.count%>)</h5>
+  	    <%@events.each do |e|%>
+  		   <p><%=e%><p>
+  		<%end%>
+  <%end%>
+
+<h2>Profile page still under construction...</h2>
+

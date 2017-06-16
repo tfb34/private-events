@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   	logout
   	flash[:success] = "Logged out."
   	redirect_to request.referrer
+
   end
 
 end
