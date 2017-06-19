@@ -9,4 +9,7 @@
 
 <h4>Attendees(<%=@event.attendees.count%>)</h4>
 
-<%=@event.attendees.collect(&:name)%>
+<%@event.attendees.collect.each do |e|%>
+	<li><%=link_to e.name, user_path(e.id)%></li>
+
+<%end%>

@@ -29,4 +29,14 @@ class User < ApplicationRecord
     #otherwise just searches for its id in the foreign_key column
     has_many :events, :foreign_key => :creator_id
 
+    #returns upcoming events
+    def upcoming_events
+        attending_events.where("date > ?", Time.now)
+    end
+
+    #returns previous events
+    def previous_events
+        attending_events.where("date < ?", Time.now)
+    end
+
 end

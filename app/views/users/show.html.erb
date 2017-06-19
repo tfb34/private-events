@@ -7,5 +7,12 @@ Welcome, <%=@user.name%> ! <br>
   		<%end%>
   <%end%>
 
+  <%if @user.attending_events.any?%>
+  	<h5>Events Attending(<%=@user.attending_events.count%>)</h5>
+  	 <%@user.attending_events.collect.each do |e|%>
+  	 	<li><%=link_to e.name, event_path(e.id)%></li>
+  	 <%end%>
+  <%end%>
+
 <h2>Profile page still under construction...</h2>
 

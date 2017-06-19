@@ -1,6 +1,16 @@
 <h2>All Events(<%=@events.count%>)</h2>
 
-<%@events.each do |e|%>
+<%if Event.past.any?%>
+	<h3>Previous</h3>
+	<%Event.past.each do |e|%>
+		<li><%= link_to e.name, event_url(e.id)%></li>
+	<%end%>
+<% end %>
 
-	<p><%=link_to e.name, event_url(e.id)%></p>
+<% if Event.upcoming.any?%>
+	<h3>Upcoming</h3>
+	
+	<%Event.upcoming.each do |e|%>
+	  <p><%=link_to e.name, event_url(e.id)%></p>
+     <%end%>
 <%end%>

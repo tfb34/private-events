@@ -34,3 +34,10 @@ e = u2.events.create!(name: "Hello Kitty convention",
 e.attendees << u1
 e.attendees << u3
 e.attendees << u4
+
+event3 = u3.events.create!(name: "Hackathon",
+						   place: "New York",
+						   date: "November 13th 2016")
+event3.attendees << u1
+event3.attendees << u2
+event3.attendees << u4
