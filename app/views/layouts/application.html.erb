@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <%=link_to 'All Events', events_path%>
+    <%=render 'layouts/header'%>
+
     <%if logged_in?%>
       <p>Profile: <%=current_user.name%></p>
       <%=link_to 'logout', session_path(current_user), method: :delete%>
@@ -18,5 +19,8 @@
     	<p><%=type%> : <%=msg%></p>
     <%end%>
     <%= yield %>
+
+    <%=render 'layouts/footer' %>
+
   </body>
 </html>
