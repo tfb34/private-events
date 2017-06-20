@@ -23,21 +23,21 @@ u4 = User.create!(name: "taehyung",
 
 event = u1.events.create!(name: "Raise Cancer Awareness",
 						 place: "Liberty state park",
-						 date: "August 25th 2017, 11AM")
+						 date: "August 25th 2017".to_date)
 event.attendees << u2
 event.attendees << u3
 event.attendees << u4
 
 e = u2.events.create!(name: "Hello Kitty convention",
 				 place: "Bryant Park",
-				 date: "July 20th 2017, 1pm")
+				 date: "July 20th 2017".to_date)
 e.attendees << u1
 e.attendees << u3
 e.attendees << u4
 
 event3 = u3.events.create!(name: "Hackathon",
 						   place: "New York",
-						   date: "November 13th 2016")
+						   date: "November 13th 2016".to_date)
 event3.attendees << u1
 event3.attendees << u2
 event3.attendees << u4

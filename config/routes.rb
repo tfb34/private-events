@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  #get 'events/new'
+  root 'static_pages#home'
 
-  #get 'sessions/new'
-
-  #get 'users/new'
+  get '/home' , to: 'static_pages#home'
+  get '/about', to: 'static_pages#about'
+  get '/help', to: 'static_pages#help'
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :events, only: [:new, :create, :show, :index]

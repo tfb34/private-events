@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170616193233) do
   end
 
   create_table "invites", force: :cascade do |t|
-    t.integer  "event_author_id",   null: false
-    t.integer  "authored_event_id", null: false
+    t.integer  "event_author_id"
+    t.integer  "authored_event_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
