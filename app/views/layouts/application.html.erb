@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>PrivateEvents</title>
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,18 +10,18 @@
   </head>
 
   <body>
+
     <%=render 'layouts/header'%>
 
-    <%if logged_in?%>
-      <p>Profile: <%=current_user.name%></p>
-      <%=link_to 'logout', session_path(current_user), method: :delete%>
-    <%end%>
-    <%flash.each do |type,msg|%>
-    	<p><%=type%> : <%=msg%></p>
-    <%end%>
-    <%= yield %>
+    <div class="container">
+      <%flash.each do |type,msg|%>
+        <div class= "alert alert-<%=type%>" >
+      	   <p><%=type%> : <%=msg%></p>
+        </div>
+      <%end%>
+      <%= yield %>
 
-    <%=render 'layouts/footer' %>
-
+      <%=render 'layouts/footer' %>
+    </div>
   </body>
 </html>

@@ -12,6 +12,8 @@ gem 'rails', '~> 5.0.3'
 gem 'sqlite3'
 #SecurePassword
 gem 'bcrypt', '~>3.1.7'
+#Use bootstrap-sass for application design
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

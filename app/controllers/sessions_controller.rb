@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   		flash[:success] = "User found."
   		redirect_to @user 
   	else
-  		flash.now[:error] = "User does not exist."
+  		flash.now[:danger] = "User does not exist."
   		render 'sessions/new'
   	end
   end
