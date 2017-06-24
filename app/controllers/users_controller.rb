@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   		flash[:success] = "Successfully created new user."
   		redirect_to @user
   	else
-  		flash.now[:error] = @user.errors.full_messages
+  		flash.now[:warning] = @user.errors.full_messages
   		render 'new'
   	end
   end
